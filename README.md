@@ -1,4 +1,4 @@
-`# CI/CD Pipeline Server setup
+# CI/CD Pipeline Server setup
 
 ## Run setup script
  
