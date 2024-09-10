@@ -5,14 +5,6 @@
  ```bash
  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Raft-Labs/server-setup/main/setup.sh)"
  ```
- 
- ```bash
- chmod +x setup.sh
- ```
- 
- ```bash
- ./setup.sh
- ```
 
 
 ## Docker Installation
@@ -32,12 +24,13 @@ The setup script also includes an optional step to create a swap file. By defaul
 To run the setup script and create a swap file of 4GB, use the following command:
 
 ```bash
-./setup.sh 4096
+curl -fsSL https://raw.githubusercontent.com/Raft-Labs/server-setup/main/setup.sh -o setup.sh
 ```
 
-
-If you do not want to create a swap file, simply run the script without any arguments and respond with 'n' when prompted:
+ ```bash
+ chmod +x setup.sh
+ ```
 
 ```bash
-./setup.sh
+./setup.sh 4096
 ```
