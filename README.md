@@ -3,7 +3,7 @@
 ## Run setup script
  
  ```bash
- curl -fsSL https://raw.githubusercontent.com/your-repo/your-project/main/setup.sh -o setup.sh
+ curl -fsSL https://raw.githubusercontent.com/Raft-Labs/server-setup/main/setup.sh -o setup.sh
  ```
  
  ```bash
@@ -41,4 +41,5 @@ If you do not want to create a swap file, simply run the script without any argu
 ```bash
 ./setup.sh
 ```
+
 
