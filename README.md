@@ -40,4 +40,4 @@ If you do not want to create a swap file, simply run the script without any argu
 
 ```bash
 ./setup.sh
-```ß
+```
