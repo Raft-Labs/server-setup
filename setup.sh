@@ -29,7 +29,9 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Post-installation steps
-sudo groupadd docker
+if ! getent group docker > /dev/null; then
+  sudo groupadd docker
+fi
 sudo usermod -aG docker $USER
 newgrp docker
 sudo systemctl enable docker.service
