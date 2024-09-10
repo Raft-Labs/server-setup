@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Update and upgrade packages
-sudo apt update && sudo apt upgrade -y
+sudo apt update -y
 
 # Install necessary dependencies
-sudo apt install -y curl git build-essential
+sudo apt install -y git build-essential
 
 # Install Docker
 
