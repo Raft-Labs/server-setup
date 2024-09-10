@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Disable immediate exit on error
+set +e
+
 # Update and upgrade packages
 sudo apt update -y
 
@@ -33,7 +36,7 @@ sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
 # Create a swap file
-sudo truncate -s 0 /swapfile
+
 # Default swap size in MB
 DEFAULT_SWAP_SIZE=8192
 
@@ -42,6 +45,7 @@ read -p "Do you want to setup swap? (y/n): " setup_swap
 if [[ "$setup_swap" == "y" || "$setup_swap" == "Y" ]]; then
   # Get swap size from arguments or use default
   SWAP_SIZE=${1:-$DEFAULT_SWAP_SIZE}
+  sudo truncate -s 0 /swapfile
   sudo dd if=/dev/zero of=/swapfile bs=1M count=$SWAP_SIZE status=progress
   sudo chmod 600 /swapfile
   sudo mkswap /swapfile
