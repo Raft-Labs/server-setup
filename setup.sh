@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Redirect stdout and stderr to a log file
+exec > >(tee -i setup.log)
+exec 2>&1
+
 # Disable immediate exit on error
 set +e
 
