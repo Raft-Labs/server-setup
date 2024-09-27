@@ -56,7 +56,12 @@ echo "Performing post-installation steps for Docker..."
 if ! getent group docker > /dev/null; then
   sudo groupadd docker
 fi
+# Add the current user to the docker group
+echo "Adding the current user to the docker group..."
 sudo usermod -aG docker $USER
+# Activate the new group
+echo "Activating the new group..."
+newgrp docker
 
 echo "Enabling Docker service..."
 sudo systemctl enable docker.service
