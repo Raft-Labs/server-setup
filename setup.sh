@@ -61,14 +61,16 @@ if ! getent group docker > /dev/null; then
   sudo groupadd docker
 fi
 # Add the current user to the docker group
-echo "Adding the current user to the docker group..."
+echo "Adding the current user $USER to the docker group..."
 sudo usermod -aG docker $USER
-# Activate the new group
-echo "Activating the new group..."
-newgrp docker
+
 
 echo "Enabling Docker service..."
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+
+# Activate the new group
+echo "Activating the new group..."
+newgrp docker
 
 echo "Setup script completed. Please log out and log back in for Docker group changes to take effect."
