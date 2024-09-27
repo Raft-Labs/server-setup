@@ -14,11 +14,7 @@ echo "Checking if swap setup is needed..."
 DEFAULT_SWAP_SIZE=8192
 
 # Check if swap setup is needed
-if [ -t 0 ]; then
-  read -p "Do you want to setup swap? (y/n): " setup_swap
-else
-  setup_swap="n"
-fi
+setup_swap=${2:-"n"}
 
 if [[ "$setup_swap" == "y" || "$setup_swap" == "Y" ]]; then
   echo "Setting up swap file..."

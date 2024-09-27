@@ -6,7 +6,6 @@
  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Raft-Labs/server-setup/main/setup.sh)"
  ```
 
-
 ## Docker Installation
 
 The setup script will install Docker on your system. It includes the following steps:
@@ -25,12 +24,8 @@ To run the setup script and create a swap file of 4GB, use the following command
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Raft-Labs/server-setup/main/setup.sh -o setup.sh
+chmod +x setup.sh
+./setup.sh 4096 y
 ```
 
- ```bash
- chmod +x setup.sh
- ```
-
-```bash
-./setup.sh 4096
-```
+In this example, `4096` is the swap size in MB, and `y` indicates that the swap file should be set up.
