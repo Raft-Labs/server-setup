@@ -3,7 +3,7 @@
 ## Run setup script
  
  ```bash
- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Raft-Labs/server-setup/main/setup.sh)"
+ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Raft-Labs/server-setup/main/setup.sh)" -- 4096 y
  ```
 
 ## Docker Installation
